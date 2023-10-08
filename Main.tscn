@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1yrvdbrp27x7"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_h1bee"]
+[ext_resource type="PackedScene" uid="uid://did00dowelmh3" path="res://MainGrid.tscn" id="2_lwlmf"]
+[ext_resource type="Texture2D" uid="uid://b0f71ndq3kk6h" path="res://icon.svg" id="2_rjha7"]
+
+[node name="Main" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.141176, 0.403922, 1, 1)
+script = ExtResource("1_h1bee")
+
+[node name="TestLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 333.0
+offset_right = 317.0
+offset_bottom = 394.0
+theme_override_font_sizes/font_size = 42
+text = "Pipetorio"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 131.0
+offset_right = 286.0
+offset_bottom = 259.0
+texture = ExtResource("2_rjha7")
+
+[node name="MainGrid" parent="." instance=ExtResource("2_lwlmf")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -650.0
+offset_top = -300.0
+offset_right = -50.0
+offset_bottom = 300.0
+grow_horizontal = 0
+grow_vertical = 2
