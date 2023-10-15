@@ -1,14 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcva46fk15ujh"]
+[gd_scene load_steps=2 format=3 uid="uid://dwk28hymiutup"]
 
-[ext_resource type="Script" path="res://Pipe.gd" id="1_nvfyj"]
+[ext_resource type="Script" path="res://FactoryControl/MachineA.gd" id="1_unhby"]
 
-[node name="Pipe" type="Control" groups=["Pipes"]]
+[node name="MachineA" type="Control" groups=["Pipes"]]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 50.0
 offset_bottom = 50.0
-script = ExtResource("1_nvfyj")
+script = ExtResource("1_unhby")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -23,7 +23,7 @@ offset_right = 15.0
 offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.666667, 0, 0, 1)
+color = Color(0.160784, 0.588235, 0.262745, 1)
 
 [node name="West" type="ColorRect" parent="."]
 layout_mode = 1

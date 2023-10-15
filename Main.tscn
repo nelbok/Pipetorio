@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1yrvdbrp27x7"]
+[gd_scene load_steps=6 format=3 uid="uid://c1yrvdbrp27x7"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_h1bee"]
 [ext_resource type="PackedScene" uid="uid://did00dowelmh3" path="res://MainGrid.tscn" id="2_lwlmf"]
 [ext_resource type="Texture2D" uid="uid://b0f71ndq3kk6h" path="res://icon.svg" id="2_rjha7"]
+[ext_resource type="PackedScene" uid="uid://dcva46fk15ujh" path="res://FactoryControl/Pipe.tscn" id="2_sc735"]
+[ext_resource type="PackedScene" uid="uid://dwk28hymiutup" path="res://FactoryControl/MachineA.tscn" id="3_0kxer"]
 
 [node name="Main" type="ColorRect"]
 anchors_preset = 15
@@ -12,22 +14,24 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.141176, 0.403922, 1, 1)
 script = ExtResource("1_h1bee")
+pipe_scene = ExtResource("2_sc735")
+machine_a_scene = ExtResource("3_0kxer")
 
 [node name="TestLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 130.0
-offset_top = 333.0
-offset_right = 317.0
-offset_bottom = 394.0
+offset_left = 164.0
+offset_top = 53.0
+offset_right = 351.0
+offset_bottom = 114.0
 theme_override_font_sizes/font_size = 42
 text = "Pipetorio"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 158.0
-offset_top = 131.0
-offset_right = 286.0
-offset_bottom = 259.0
+offset_left = 26.0
+offset_top = 29.0
+offset_right = 154.0
+offset_bottom = 157.0
 texture = ExtResource("2_rjha7")
 
 [node name="MainGrid" parent="." instance=ExtResource("2_lwlmf")]
@@ -46,11 +50,19 @@ grow_vertical = 2
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 138.0
-offset_top = 494.0
-offset_right = 304.0
-offset_bottom = 560.0
+offset_left = 144.0
+offset_top = 532.0
+offset_right = 310.0
+offset_bottom = 598.0
 text = "Delete all"
 
-[connection signal="pipe_created" from="MainGrid" to="." method="_on_main_grid_pipe_created"]
+[node name="ActionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 226.0
+offset_right = 330.0
+offset_bottom = 279.0
+
+[connection signal="control_created" from="MainGrid" to="." method="_on_main_grid_control_created"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="item_selected" from="ActionButton" to="." method="_on_action_button_item_selected"]
