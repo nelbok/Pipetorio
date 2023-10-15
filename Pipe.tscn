@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Pipe.gd" id="1_nvfyj"]
 
-[node name="Pipe" type="Control"]
+[node name="Pipe" type="Control" groups=["Pipes"]]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 3
 anchors_preset = 0

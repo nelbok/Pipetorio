@@ -6,6 +6,10 @@ class_name Pipe extends Control
 @export var east_pipe: Pipe
 @export var south_pipe: Pipe
 
+@export_group("Factory")
+@export var fact_x: int
+@export var fact_y: int
+
 func _process(_delta):
 	# Retrieve all childnodes
 	var west = get_node("West")
